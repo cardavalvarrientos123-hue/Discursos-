@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estudio de discursos públicos</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#2B6E8F"><link rel="apple-touch-icon" href="icon-192.png"><meta name="mobile-web-app-capable" content="yes">
+<style>
+:root{--bg:#fff;--surface:#F3F4F6;--ink:#000;--muted:#555;--line:#D0D3D8;--accent:#000;--on:#fff;--ok:#1B7A4B;--bad:#B3361B;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--bg:#000;--surface:#121212;--ink:#fff;--muted:#B3B3B3;--line:#2B2B2B;--accent:#fff;--on:#000;--ok:#5FD39A;--bad:#FF8A70;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,sans-serif;padding-bottom:84px}
+main{max-width:640px;margin:0 auto;padding:16px}
+h1,h2,.clk{font-family:Literata,Georgia,serif}
+h1{font-size:1.5rem;margin:4px 0 12px}h2{font-size:1.15rem;margin:22px 0 8px}h3{font-size:1rem;margin:16px 0 6px}
+label{display:block;font-size:.85rem;color:var(--muted);margin:10px 0}
+input,textarea,select{display:block;width:100%;margin-top:4px;padding:10px;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px}
+textarea{min-height:64px;resize:vertical}
+input[type=checkbox]{display:inline;width:20px;height:20px;margin:2px 10px 0 0;flex:none;accent-color:var(--accent)}
+button{font:inherit;font-weight:600;padding:10px 14px;border:0;border-radius:8px;background:var(--accent);color:var(--on);cursor:pointer}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.row{display:flex;gap:8px}.row select{flex:1;margin:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:4px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600;padding:10px 0;display:flex;justify-content:space-between;gap:8px}summary span{color:var(--muted);font-weight:400}
+.ck{display:flex;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}.ck:last-child{border:0}
+.ck.sub{margin-left:20px;font-size:.95rem}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;background:var(--ok)}
+.clk{font-size:4.2rem;text-align:center;font-weight:700;margin:12px 0 0;font-variant-numeric:tabular-nums}.clk.over{color:var(--bad)}
+.sub2{text-align:center;color:var(--muted);margin:0 0 14px}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.lap{display:flex;justify-content:space-between;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);margin:6px 0}
+.lap.now{border-color:var(--accent);border-width:2px}.lap.done{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0}
+.card b.p{color:var(--ok)}.card b.n{color:var(--bad)}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;background:none;color:var(--muted);border-radius:0;padding:14px 4px;font-size:.9rem}nav button.on{color:var(--accent);box-shadow:inset 0 3px var(--accent)}
+.muted{color:var(--muted)}
+[hidden]{display:none!important}
+.row{flex-wrap:wrap;align-items:center}
+.pt{border-top:1px solid var(--line);padding:10px 0}.pt .row select{flex:0 0 110px}.pt .row input{margin:0;flex:1}
+.pt .row img{width:64px;height:64px;object-fit:cover;border-radius:8px}.pc img{max-width:100%;max-height:200px;border-radius:8px;display:block;margin:8px 0}
+.fl{display:inline-block;margin:0;padding:10px 14px;border:1px solid var(--line);border-radius:8px;color:var(--accent);font-weight:600;cursor:pointer}
+.tl{display:flex;gap:3px;position:relative;height:14px;margin:6px 0 12px}.tl i{background:var(--line);border-radius:3px}.tl i.on{background:var(--accent)}.tl b{position:absolute;top:-4px;left:0;width:3px;height:22px;background:var(--ink);border-radius:2px}
+.msg{min-height:1.6em;text-align:center;font-weight:600;margin-bottom:8px}.msg.warn{color:#B5651D}.msg.bad{color:var(--bad)}
+.ref{color:var(--accent);font-weight:600;margin-left:6px}
+textarea{overflow:hidden;resize:none}
+.chip{display:inline-block;color:#fff;border:0;border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:600}
+.num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--line);font-weight:600;flex:none}
+.pt .row select{flex:1}.pc .row{margin-bottom:4px}
+.ck2{display:flex;align-items:center;color:var(--ink);font-size:1rem;margin:8px 0}
+.lap .p{color:var(--ok)}.lap .n{color:var(--bad)}
+.bub{padding:10px 12px;border-radius:12px;margin:8px 0;max-width:92%;white-space:normal}.bub.u{background:var(--accent);color:var(--on);margin-left:auto}.bub.a{background:var(--surface);border:1px solid var(--line)}
+.src a{display:block;color:var(--accent);font-size:.85rem;margin-top:4px;word-break:break-all}
+.cin{position:sticky;bottom:calc(62px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:flex-end;background:var(--bg);padding:8px 0}.cin textarea{margin:0;max-height:40vh;overflow:auto}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav id="nav"></nav>
+<script>
+var G=[["Preparación del bosquejo",[
+["e1","Estudié el bosquejo hasta captar su sentido: el tema, el objetivo y cómo se relacionan los puntos principales con el tema."],
+["e2","Me pregunté qué es importante para mis oyentes y qué quiero lograr con el discurso."],
+["e3","Reuní información útil y práctica, con datos concretos, y descarté lo que no apoyaba directamente un punto principal."],
+["e4","Limité los puntos principales (pocos se recuerdan mejor) y les di una estructura lógica: cronológica, temática, causa y efecto, o problema y solución."],
+["e5","Preparé una introducción que despierte interés y una conclusión motivadora."],
+["e6","Preparé el bosquejo tal como lo proporciona la organización."],
+["e7","Repasé y refiné el bosquejo con tiempo suficiente antes de pronunciarlo."]]],
+["Empleo de la Biblia",[
+["m1","Baso la enseñanza en las Escrituras: muestro qué respaldo bíblico tiene cada afirmación del bosquejo."],
+["m2","Examiné el contexto de los versículos y elegí los más adecuados; no necesito leerlos todos."],
+["m3","Mi tiempo con cada texto va a mostrar su aplicación, no solo a leerlo; mantengo la Biblia abierta mientras lo explico."],
+["m4","Explicar: me pregunté qué significa el pasaje, por qué lo uso y qué podrían preguntar los oyentes; aclaré palabras, contexto y trasfondo."],
+["m5","Ilustrar: usé comparaciones con cosas conocidas (como las del Sermón del Monte) para que se entienda y se recuerde."],
+["m6","Aplicar: mostré el valor práctico del texto y los beneficios de obedecerlo."],
+["m7","Tuve presentes las distintas circunstancias del auditorio: jóvenes, mayores, casados, solteros y recién interesados."]]],
+["Decisiones del orador",[
+["d1","Decidí cuánto tiempo dedicar a cada punto, sin tratar de abarcar demasiado ni atiborrar de datos a los oyentes."],
+["d2","Mencioné brevemente lo secundario y reservé el tiempo para lo más útil para el auditorio."],
+["d3","Evité conjeturas y opiniones personales; hablo de lo que dice la Palabra de Dios."],
+["d4","Practiqué en voz alta y puedo expresar las ideas con mis palabras y con el corazón."],
+["d5","Me autoevalué: ¿qué pretendo?, ¿cuáles son los puntos principales?, ¿qué deben hacer los oyentes?"],
+["d6","Cuidé que el discurso sea práctico y realista, para beneficio de la congregación."]]],
+["Cómo usar el bosquejo",[
+["b1","Mi objetivo: enseñar la Biblia con eficacia y animar a los oyentes a amar a Jehová y a seguir en su camino."],
+["b2","Pensé en mi auditorio: sus circunstancias, sus sentimientos, qué les importa y cómo presentárselo."],
+["b3","Analicé el título, los encabezados y la nota de objetivo para captar la idea principal."],
+["b4","Organicé el discurso de una idea principal a la vez, con las ideas secundarias que la apoyan."],
+["b5","En cada texto clave dediqué tiempo a explicar, ilustrar y aplicar."],
+["b5a","Explicar: aclaré el contexto y las palabras clave, y me aseguré de que se entendiera lo leído."],
+["b5b","Ilustrar: usé ejemplos sencillos y variados, sin sensacionalismo ni temas difíciles de explicar."],
+["b5c","Aplicar: mostré qué hacer y cómo, con situaciones realistas para distintos grupos del auditorio."],
+["b6","Decidí qué ideas secundarias y textos sin “lea” merecen más tiempo."],
+["b7","Preparé mis notas a partir del bosquejo, con frases que me recuerden las ideas."]]],
+["Cómo usar las ayudas visuales",[
+["v1","Uso pocas ayudas visuales y solo para ideas importantes; son imágenes fijas que enseñan, no que entretienen."],
+["v2","Si muestro textos en pantalla, es con moderación y sin material en movimiento; no pido material extra a la sucursal."]]],
+["Cómo mejorar la presentación",[
+["p1","Miro a los oyentes: expongo una idea y luego miro a una persona; no leo mirando a la cámara."],
+["p2","Practico en voz alta (mejor grabado) para pulir contenido, tiempo y forma."],
+["p3","Hablo con naturalidad, con mis palabras, con entusiasmo y una sonrisa cálida; no leo el discurso."],
+["p4","Al introducir un texto genero expectativa, doy tiempo a encontrarlo, lo leo con exactitud y énfasis, y mantengo la Biblia abierta."],
+["p5","Me centro en el mensaje positivo de la Biblia y evito comentarios negativos sobre otros."],
+["p6","Si hay personas que no son Testigos, presento todo de modo que los recién interesados lo entiendan."],
+["p7","Pido consejo a un orador experimentado o al consejero auxiliar y reviso Maestros y Benefíciese."]]],
+["Con intérprete (si aplica)",[
+["i1","Acorté el discurso al menos un tercio para dejar tiempo a la interpretación (no aplica al lenguaje de señas)."],
+["i2","Repasé con el intérprete el esquema y el objetivo; si se va a leer, le di el texto con antelación."],
+["i3","Le indiqué los textos bíblicos y las expresiones que destacaré, y comprobamos que su Biblia transmita la misma idea."],
+["i4","Decidimos si los textos se leen en ambos idiomas o solo en la lengua de destino."],
+["i5","Hago pausas con fechas, números y textos, y uso cifras redondas."],
+["i6","Le avisé de ilustraciones, modismos y expresiones poco comunes, y confirmé que se pueden transmitir."],
+["i7","Hablo con frases cortas, con pensamientos completos, y espero a que termine cada idea."],
+["i8","Hablo con buen volumen y articulo bien las palabras."]]]];
+var S=null;try{S=JSON.parse(localStorage.getItem("oratoria"))}catch(e){}
+if(!S)S={talks:[],cur:null,view:"prep"};
+function save(){try{localStorage.setItem("oratoria",JSON.stringify(S));return 1}catch(e){return 0}}
+function newTalk(){var t={id:Date.now(),title:"Discurso nuevo",num:"",min:30,idea:"",secs:[{t:"Introducción",m:3,idea:"",pts:[]}],checks:{},custom:[],log:[]};S.talks.push(t);S.cur=t.id;save()}
+function P(k,x,r){return{k:k,x:x,r:r||"",img:""}}
+function seed(){return{id:Date.now()+1,title:"¿Habrá algún día justicia para todos?",num:"33",min:30,idea:"Con cariño y empatía, mostrar que rebelarse no es la solución, que la Biblia promete un futuro sin injusticias y dar sugerencias prácticas para sobrellevar las de hoy. Respetar el tiempo de cada sección; no leer ni explicar todos los textos entre paréntesis (Benefíciese, pp. 52-55 y 166-169).",secs:[
+{t:"Vivimos en un mundo lleno de injusticias",m:3,idea:"",pts:[P("lea","Desde hace muchísimo tiempo se cometen injusticias","Ec 4:1"),P("cita","Hoy hay injusticias, prejuicios, maltratos y opresión","Ec 8:9"),P("idea","Quien las ha sufrido desea consuelo y alivio")]},
+{t:"¿Es rebelarse la solución?",m:4,idea:"",pts:[P("cita","Es normal querer librarse de la opresión","Job 35:9"),P("img","Algunos se rebelan para luchar contra las injusticias (imagen 1)","g 7/13 7, 8"),P("cita","Rebelarse no resuelve la raíz del problema","Ec 1:15"),P("cita","Hay injusticias porque no se siguen los caminos de Dios","Dt 32:4, 5"),P("cita","Buscar justicia sin Dios está condenado al fracaso","Sl 146:3; Jer 10:23")]},
+{t:"¿Cómo solucionará Dios las injusticias?",m:12,idea:"",pts:[P("cita","Dios estableció un Reino celestial; pronto destruirá los gobiernos humanos","Da 7:13, 14"),P("lea","Jesús es el Rey; su gobierno traerá justicia y rectitud","Is 9:6, 7"),P("cita","Jesús no promovió reformas sociales; enseñó a confiar en el Reino","Mt 4:23; 6:9, 10"),P("cita","Sus milagros muestran lo que hará como Rey","Mt 14:17-21; Lu 18:35-43"),P("img","El Reino eliminará injusticia, prejuicio, maltrato y opresión (imagen 2)","Sl 72:12-14"),P("cita","Recursos para todos, sin desigualdad económica","Sl 72:16"),P("cita","Todas las razas serán consideradas iguales","Hch 10:34, 35"),P("cita","Una sola adoración a Jehová, sin religiones distintas","Is 11:9"),P("idea","Habrá paz en todas las familias")]},
+{t:"¿Cómo puede sobrellevar las injusticias de hoy día?",m:11,idea:"",pts:[P("cita","Identificar situaciones de posible injusticia y evitarlas","Pr 22:3"),P("cita","Si lo trataron injustamente, puede recurrir al sistema legal","Ro 13:4"),P("lea","Expresar a Jehová cómo se siente","1Pe 5:6, 7"),P("cita","Jehová consuela y da fuerzas","Ro 12:12"),P("cita","Castigará a los malos a su debido tiempo","Ro 12:19"),P("cita","Cultivar paciencia, amabilidad y autocontrol","Gál 5:22, 23"),P("cita","Ayudan a mantener la calma y no empeorar las cosas","Ro 12:17"),P("cita","Puede ablandar el corazón de quien trata mal","Ro 12:20, 21"),P("cita","A pesar de todo, se puede ser feliz y tener paz","Ro 15:13"),P("idea","Conclusión: tener fe fuerte en el Reino, que hará posible la justicia para todos")]}],checks:{},custom:[],log:[]}}
+S.talks.forEach(function(t){t.secs.forEach(function(x){if(!x.pts)x.pts=[]})});
+if(S.op==null)S.op=0;if(!S.al)S.al={m:1,s:1,v:1};
+if(!S.seed){var sd=seed();S.talks.push(sd);S.cur=sd.id;S.seed=1;save()}
+if(!S.talks.length)newTalk();
+var KN={idea:"Idea",lea:"Leer",cita:"Citar",img:"Imagen"};
+function T(){return S.talks.filter(function(x){return x.id==S.cur})[0]||S.talks[0]}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function fmt(ms){var s=Math.floor(ms/1000);return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+var tm={run:false,acc:0,st:0,laps:[],iv:null,i:0,fl:{},ac:null,wl:null};
+function el(){return tm.acc+(tm.run?Date.now()-tm.st:0)}
+function tabs(){var v=[["prep","Preparar"],["pautas","Pautas"],["prac","Practicar"],["reg","Registro"],["chat","Guía"]];
+document.getElementById("nav").innerHTML=v.map(function(x){return '<button data-v="'+x[0]+'" class="'+(S.view==x[0]?"on":"")+'">'+x[1]+"</button>"}).join("")}
+function head(t){return '<div class="row"><select id="sel" aria-label="Discurso">'+S.talks.map(function(x){return '<option value="'+x.id+'"'+(x.id==t.id?" selected":"")+">"+esc((x.num?x.num+". ":"")+x.title)+"</option>"}).join("")+'</select><button data-a="new">Nuevo</button><button class="ghost" data-a="th">'+(dk()?"Claro":"Oscuro")+'</button></div>'}
+function prep(t){var h=head(t)+'<h1>Preparar</h1><p class="muted">Sigue el orden: objetivo, secciones con sus minutos, puntos con textos y, al final, imágenes. Los minutos deben sumar la meta.</p><label>Título<input data-f="title" value="'+esc(t.title)+'"></label><div class="two"><label>Número<input data-f="num" value="'+esc(t.num)+'"></label><label>Minutos<input type="number" data-f="min" value="'+t.min+'"></label></div><label>Objetivo y nota del discurso<textarea data-f="idea">'+esc(t.idea)+'</textarea></label><h2>Secciones <span class="muted" id="tot"></span></h2>';
+t.secs.forEach(function(s,i){var a='data-i="'+i+'"';h+='<details data-s="'+i+'"'+(i==S.op?" open":"")+'><summary><b>'+esc(s.t||"Sección")+'</b><span>'+s.m+' min</span></summary><div class="two"><label>Título<input '+a+' data-f="t" value="'+esc(s.t)+'"></label><label>Minutos<input type="number" '+a+' data-f="m" value="'+s.m+'"></label></div><label>Notas de la sección<textarea '+a+' data-f="idea">'+esc(s.idea)+'</textarea></label>';
+s.pts.forEach(function(p,j){var b=a+' data-j="'+j+'"';h+='<div class="pt"><div class="row"><span class="num">'+(j+1)+'</span><button class="chip" style="background:'+col(p)+'" data-a="cc" '+b+'>'+KN[p.k]+'</button><select '+b+' data-f="k" aria-label="Tipo">'+Object.keys(KN).map(function(k){return '<option value="'+k+'"'+(p.k==k?" selected":"")+">"+KN[k]+"</option>"}).join("")+'</select></div><input '+b+' data-f="r" placeholder="Texto o referencia" value="'+esc(p.r)+'"><textarea '+b+' data-f="x" placeholder="Idea del punto">'+esc(p.x)+'</textarea><div class="row">'+(p.img?'<img src="'+p.img+'" alt="">':"")+'<label class="fl">'+(p.img?"Cambiar":"Añadir")+' imagen<input type="file" accept="image/*" '+b+' data-img="1" hidden></label>'+(p.img?'<button class="ghost" data-a="ri" '+b+'>Quitar imagen</button>':"")+'<button class="ghost" data-a="rp" '+b+'>Quitar punto</button></div></div>'});
+h+='<div class="row"><button data-a="ap" '+a+'>Añadir punto</button><button class="ghost" data-a="rm" '+a+'>Quitar sección</button></div><p></p></details>'});
+return h+'<div class="row"><button data-a="add">Añadir sección</button><button class="ghost" data-a="del">Borrar discurso</button></div>'}
+function pautas(t){var all=[];G.forEach(function(g){g[1].forEach(function(x){all.push(x[0])})});t.custom.forEach(function(c,i){all.push("c"+i)});
+var d=all.filter(function(k){return t.checks[k]}).length;
+var h=head(t)+'<h1>Pautas</h1><p class="muted">Marca cada punto cuando lo cumplas en este discurso.</p><div class="bar"><i style="width:'+Math.round(100*d/all.length)+'%"></i></div><p class="muted">'+d+" de "+all.length+" cumplidas</p>";
+G.forEach(function(g){h+="<h2>"+g[0]+"</h2>";g[1].forEach(function(x){h+='<label class="ck'+(x[0].length>2?" sub":"")+'" style="color:var(--ink);font-size:inherit;margin:0"><input type="checkbox" data-c="'+x[0]+'"'+(t.checks[x[0]]?" checked":"")+">"+x[1]+"</label>"})});
+h+="<h2>Mis recordatorios</h2>";t.custom.forEach(function(c,i){h+='<label class="ck" style="color:var(--ink);font-size:inherit;margin:0"><input type="checkbox" data-c="c'+i+'"'+(t.checks["c"+i]?" checked":"")+'><span style="flex:1">'+esc(c)+'</span><button class="ghost" data-a="rc" data-i="'+i+'" aria-label="Quitar">×</button></label>'});
+return h+'<div class="row" style="margin-top:10px"><input id="nc" placeholder="Nuevo recordatorio" style="margin:0"><button data-a="ac">Añadir</button></div>'}
+function plan(t){var c=0;return t.secs.map(function(s){var a=c;c+=(+s.m||0)*60000;return{a:a,b:c}})}
+function prac(t){var pl=plan(t),cur=Math.min(tm.i,t.secs.length-1),s=t.secs[cur],nx=t.secs[cur+1];
+var h=head(t)+'<h1>Practicar</h1><div class="clk" id="clk">00:00</div><p class="sub2" id="sub"></p><div class="tl">'+t.secs.map(function(x,i){return '<i class="'+(i==cur?"on":"")+'" style="flex:'+(x.m||1)+'" title="'+esc(x.t)+'"></i>'}).join("")+'<b id="mk"></b></div><div class="msg" id="msg"></div><div class="btns"><button data-a="go" id="go">Iniciar</button><button class="ghost" data-a="lap">Siguiente sección</button><button class="ghost" data-a="rst">Reiniciar</button><button data-a="fin">Terminar y guardar</button></div>';
+h+='<h2>'+esc(s.t)+'</h2><p class="muted">Sección '+(cur+1)+" de "+t.secs.length+" · de "+fmt(pl[cur].a)+" a "+fmt(pl[cur].b)+(nx?" · sigue: "+esc(nx.t):" · última sección")+"</p>";
+if(s.idea)h+='<p class="muted">'+esc(s.idea)+"</p>";
+s.pts.forEach(function(p,j){h+='<div class="card pc"><div class="row"><span class="num">'+(j+1)+'</span><b class="chip" style="background:'+col(p)+'">'+KN[p.k]+"</b>"+(p.r?'<span class="ref">'+esc(p.r)+"</span>":"")+"</div><div>"+esc(p.x)+"</div>"+(p.img?'<img src="'+p.img+'" alt="">':"")+"</div>"});
+h+='<details><summary><b>Avisos y grabación</b></summary><label>Avisar antes de terminar cada sección<select data-al="m">'+[1,2,3,5].map(function(n){return '<option value="'+n+'"'+(S.al.m==n?" selected":"")+">"+n+" min</option>"}).join("")+'</select></label><label class="ck2"><input type="checkbox" data-al="s"'+(S.al.s?" checked":"")+'>Sonido</label><label class="ck2"><input type="checkbox" data-al="v"'+(S.al.v?" checked":"")+'>Vibración</label><label class="ck2"><input type="checkbox" data-al="rec"'+(S.rec?" checked":"")+'>Grabar mi voz al iniciar</label></details>';return h}
+function reg(t){var h=head(t)+'<h1>Registro</h1>';if(!t.log.length)return h+'<p class="muted">Aún no hay ensayos. Termina una práctica y se guardará aquí.</p>';
+h+='<p class="muted">'+t.log.length+" ensayo"+(t.log.length>1?"s":"")+" de este discurso</p>";
+t.log.slice().reverse().forEach(function(l,k){var i=t.log.length-1-k,df=Math.round((l.ms-t.min*60000)/1000),sg=df>0?"+":"−",ad=Math.abs(df);
+h+='<div class="card"><b>'+esc(l.d)+"</b> · "+fmt(l.ms)+' <b class="'+(df>0?"n":"p")+'">('+sg+fmt(ad*1000)+")</b>";
+(l.laps||[]).forEach(function(c,n){var d=c-(n?l.laps[n-1]:0),sc=t.secs[n],pm=sc?sc.m*60000:0;h+='<div class="lap"><span>'+esc(sc?sc.t:"")+'</span><span class="'+(d>pm?"n":"p")+'">'+fmt(d)+" / "+fmt(pm)+"</span></div>"});
+if(l.rec)h+='<audio controls data-rec="'+l.rec+'" style="width:100%;margin:8px 0"></audio>';
+h+='<textarea data-l="'+i+'" placeholder="Qué mejorar la próxima vez">'+esc(l.n)+'</textarea><button class="ghost" data-a="rl" data-i="'+i+'">Quitar</button></div>'});return h}
+function chat(t){var h='<div class="row"><button class="ghost" data-a="th">'+(dk()?"Claro":"Oscuro")+'</button></div><h1>Guía</h1><p class="muted">Pregunta sobre tus pautas o tu discurso, o pídele que busque en jw.org. Responde con referencias.</p><details><summary><b>Conexión</b><span>'+(S.key?"lista":"falta la clave")+'</span></summary><label>Clave de Gemini (gratis en aistudio.google.com)<input id="key" type="password" value="'+esc(S.key||"")+'" placeholder="AIza..."></label><button data-a="sk">Guardar clave</button><p class="muted">La clave se guarda solo en este teléfono. El plan gratuito tiene límites diarios y Google puede usar lo que escribes para mejorar sus productos.</p></details>';
+(S.chat||[]).forEach(function(m){h+='<div class="bub '+m.r+'">'+esc(m.x).replace(/\n/g,"<br>")+(m.s&&m.s.length?'<div class="src">'+m.s.map(function(u){return '<a href="'+esc(u.u)+'" target="_blank" rel="noopener">'+esc(u.t)+"</a>"}).join("")+"</div>":"")+"</div>"});
+if(busy)h+='<div class="bub a">Buscando…</div>';
+return h+'<div class="cin"><textarea id="q" rows="1" placeholder="Escribe tu pregunta"></textarea><button data-a="send">Enviar</button></div><button class="ghost" data-a="clr">Borrar chat</button>'}
+function beep(n){try{if(S.al.s&&tm.ac){var c=tm.ac,o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=n>1?880:660;g.gain.value=.2;o.start();o.stop(c.currentTime+(n>1?.6:.25))}}catch(e){}try{if(S.al.v&&navigator.vibrate)navigator.vibrate(n>1?[300,100,300]:150)}catch(e){}}
+function tick(){var c=document.getElementById("clk");if(!c)return;var t=T(),e=el(),pl=plan(t),i=Math.min(tm.i,t.secs.length-1),rem=pl[i].b-e,tot=pl[pl.length-1].b,al=S.al.m*60000;
+c.textContent=fmt(e);c.className="clk"+(e>tot?" over":"");
+var g=document.getElementById("go");if(g)g.textContent=tm.run?"Pausar":(tm.acc?"Continuar":"Iniciar");
+var s=document.getElementById("sub");if(s)s.textContent=(rem>=0?"Te quedan "+fmt(rem)+" en esta sección":"Pasaste "+fmt(-rem)+": pasa a la siguiente")+" · meta total "+fmt(tot);
+var m=document.getElementById("mk");if(m)m.style.left="calc("+Math.min(100,100*e/tot)+"% - 2px)";
+if(tm.run){var f=tm.fl,ms=document.getElementById("msg");
+if(rem<=al&&!f[i+"a"]){f[i+"a"]=1;beep(1);if(ms){ms.textContent=S.al.m==1?"Falta 1 minuto para cerrar esta sección":"Faltan "+S.al.m+" minutos para cerrar esta sección";ms.className="msg warn"}}
+if(rem<=0&&!f[i+"b"]){f[i+"b"]=1;beep(2);if(ms){ms.textContent=i<pl.length-1?"Tiempo cumplido: pasa a la siguiente sección":"Tiempo total cumplido: cierra el discurso";ms.className="msg bad"}}}}
+function updTot(){var t=T(),n=t.secs.reduce(function(a,s){return a+(+s.m||0)},0),e=document.getElementById("tot");if(e)e.textContent="("+n+" de "+t.min+" min)"+(n==t.min?" ✓":" · ajusta los minutos")}
+function render(){tabs();var t=T(),v=S.view,a=document.getElementById("app");a.innerHTML=v=="prep"?prep(t):v=="pautas"?pautas(t):v=="prac"?prac(t):v=="chat"?chat(t):reg(t);updTot();tick();grow();media();window.scrollTo(0,v=="chat"?document.body.scrollHeight:0)}
+var PL=["#2B6E8F","#2F7D5B","#B5651D","#8A4FA3","#B5472D","#5E6B78"],DC={idea:5,lea:1,cita:0,img:2};
+function ci(p){return p.c==null?DC[p.k]:p.c}function col(p){return PL[ci(p)]}
+function grow1(x){x.style.height="auto";if(x.scrollHeight)x.style.height=x.scrollHeight+"px"}
+function grow(){document.querySelectorAll("textarea").forEach(grow1)}
+function db(cb){try{var r=indexedDB.open("disc",1);r.onupgradeneeded=function(){r.result.createObjectStore("rec")};r.onsuccess=function(){cb(r.result)};r.onerror=function(){cb(null)}}catch(e){cb(null)}}
+function dput(k,v,cb){db(function(d){if(!d)return;var tx=d.transaction("rec","readwrite");tx.objectStore("rec").put(v,k);tx.oncomplete=function(){cb&&cb()}})}
+function dget(k,cb){db(function(d){if(!d)return;var q=d.transaction("rec").objectStore("rec").get(k);q.onsuccess=function(){cb(q.result)}})}
+function media(){document.querySelectorAll("audio[data-rec]").forEach(function(a){dget(a.dataset.rec,function(b){if(b)a.src=URL.createObjectURL(b)})})}
+var RC={m:null,ch:[],st:null};
+function recGo(){if(!S.rec)return;if(RC.m){if(RC.m.state=="paused")RC.m.resume();return}
+try{navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){RC.st=s;RC.ch=[];RC.m=new MediaRecorder(s);RC.m.ondataavailable=function(e){if(e.data.size)RC.ch.push(e.data)};RC.m.start()}).catch(function(){alert("No se pudo usar el micrófono. Revisa el permiso.")})}catch(e){}}
+function recPause(){if(RC.m&&RC.m.state=="recording")RC.m.pause()}
+function recStop(cb){var m=RC.m;if(!m)return;RC.m=null;m.onstop=function(){if(RC.st)RC.st.getTracks().forEach(function(x){x.stop()});var b=new Blob(RC.ch,{type:m.mimeType||"audio/webm"});RC.ch=[];if(cb)cb(b)};try{m.stop()}catch(e){}}
+function recDrop(){recStop()}
+function recSave(){if(!RC.m)return"";var id="r"+Date.now();recStop(function(b){dput(id,b,function(){if(S.view=="reg")media()})});return id}
+var busy=0;
+function sys(){var t=T();return "Eres la guía de una app de estudio para preparar discursos públicos de los testigos de Jehová. Responde en español, breve y claro. Para buscar información usa solo jw.org y wol.jw.org con la búsqueda web; si no encuentras algo ahí, dilo. Cita siempre la referencia (publicación, artículo o texto bíblico) y no copies párrafos largos: resume con tus palabras. Pautas del orador que conoce el usuario:\n"+G.map(function(g){return g[0]+": "+g[1].map(function(x){return x[1]}).join(" ")}).join("\n")+"\nDiscurso actual: "+t.num+" "+t.title+" ("+t.min+" min). Objetivo: "+t.idea+"\n"+t.secs.map(function(s,i){return (i+1)+". "+s.t+" ("+s.m+" min): "+s.pts.map(function(p,j){return (j+1)+") "+KN[p.k]+" "+p.r+" "+p.x}).join("; ")}).join("\n")}
+function gem(ms,ws){var b={systemInstruction:{parts:[{text:sys()}]},contents:ms};if(ws)b.tools=[{google_search:{}}];return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="+encodeURIComponent(S.key),{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(b)}).then(function(r){return r.json()}).then(function(d){if(d.error)throw new Error(d.error.message);return d})}
+function ask(){var q=document.getElementById("q").value.trim();if(!q||busy)return;if(!S.key){alert("Primero guarda tu clave de Gemini.");return}
+S.chat=S.chat||[];S.chat.push({r:"u",x:q});busy=1;var fb=0;render();
+var ms=S.chat.slice(-12).map(function(m){return{role:m.r=="u"?"user":"model",parts:[{text:m.x}]}});while(ms.length&&ms[0].role!="user")ms.shift();
+gem(ms,1).catch(function(){fb=1;return gem(ms,0)}).then(function(d){var c=(d.candidates||[])[0]||{},tx=((c.content||{}).parts||[]).map(function(p){return p.text||""}).join(""),src=[],seen={};((c.groundingMetadata||{}).groundingChunks||[]).forEach(function(g){var w=g.web;if(w&&w.uri&&!seen[w.uri]){seen[w.uri]=1;src.push({u:w.uri,t:w.title||w.uri})}});S.chat.push({r:"a",x:(tx||"No encontré una respuesta.")+(fb?"\\n\\n(Sin búsqueda en internet: respondí con tus pautas y tu discurso.)":""),s:src})})
+.catch(function(er){S.chat.push({r:"a",x:"No pude conectar: "+er.message,s:[]})}).then(function(){busy=0;S.chat=S.chat.slice(-20);save();render()})}
+document.addEventListener("input",function(e){if(e.target.tagName=="TEXTAREA")grow1(e.target)});
+document.addEventListener("toggle",grow,true);
+document.addEventListener("change",function(e){var x=e.target,k=x.dataset.al;if(!k)return;if(k=="rec")S.rec=x.checked;else if(k=="m")S.al.m=+x.value;else S.al[k]=x.checked?1:0;save()});
+document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var a=b.dataset.a,t=T();
+if(a=="cc"){var i=+b.dataset.i,p=t.secs[i].pts[+b.dataset.j];p.c=(ci(p)+1)%PL.length;S.op=i;save();render()}
+else if(a=="sk"){S.key=document.getElementById("key").value.trim();save();render()}
+else if(a=="th"){S.th=dk()?"light":"dark";applyTh();save();render()}else if(a=="send")ask();else if(a=="clr"){S.chat=[];save();render()}});
+function dk(){return document.documentElement.dataset.theme=="dark"}
+function applyTh(){var m=S.th||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=m;var mt=document.querySelector('meta[name=theme-color]');if(mt)mt.content=m=="dark"?"#000000":"#ffffff"}
+applyTh();
+function stop(){if(tm.run){tm.acc=el();tm.run=false}clearInterval(tm.iv);try{if(tm.wl)tm.wl.release()}catch(e){}tm.wl=null}
+function reset(){stop();recDrop();tm.acc=0;tm.laps=[];tm.i=0;tm.fl={}}
+function compress(file,cb){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var k=Math.min(1,720/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.7))};im.src=r.result};r.readAsDataURL(file)}
+document.addEventListener("input",function(e){var x=e.target,t=T(),f=x.dataset.f,d=x.closest("details");if(d&&d.dataset.s)S.op=+d.dataset.s;
+if(x.dataset.l!=null){t.log[+x.dataset.l].n=x.value;save();return}
+if(!f)return;var v=x.type=="number"?(+x.value||0):x.value;
+if(x.dataset.j!=null)t.secs[+x.dataset.i].pts[+x.dataset.j][f]=v;
+else if(x.dataset.i!=null){var i=+x.dataset.i;t.secs[i][f]=v;if(f=="t"||f=="m")document.querySelectorAll("summary")[i].innerHTML="<b>"+esc(t.secs[i].t||"Sección")+"</b><span>"+t.secs[i].m+" min</span>"}
+else t[f]=v;
+save();updTot()});
+document.addEventListener("change",function(e){var x=e.target;
+if(x.id=="sel"){S.cur=+x.value;S.op=0;reset();save();render()}
+else if(x.dataset.c){T().checks[x.dataset.c]=x.checked;save();render()}
+else if(x.dataset.img&&x.files[0]){var i=+x.dataset.i,j=+x.dataset.j;compress(x.files[0],function(u){T().secs[i].pts[j].img=u;if(!save())alert("No hay espacio para guardar la imagen. Quita otras imágenes.");S.op=i;render()})}});
+document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var t=T(),a=b.dataset.a,i=+b.dataset.i,j=+b.dataset.j;
+if(b.dataset.v){S.view=b.dataset.v;save();render();return}
+if(a=="new"){reset();newTalk();S.view="prep";S.op=0;render()}
+else if(a=="del"){if(confirm("¿Borrar este discurso?")){S.talks=S.talks.filter(function(x){return x.id!=t.id});if(!S.talks.length)newTalk();S.cur=S.talks[0].id;reset();save();render()}}
+else if(a=="add"){t.secs.push({t:"Sección "+(t.secs.length+1),m:5,idea:"",pts:[]});S.op=t.secs.length-1;save();render()}
+else if(a=="rm"){if(t.secs.length>1){t.secs.splice(i,1);S.op=0;save();render()}}
+else if(a=="ap"){t.secs[i].pts.push(P("idea",""));S.op=i;save();render()}
+else if(a=="rp"){t.secs[i].pts.splice(j,1);S.op=i;save();render()}
+else if(a=="ri"){t.secs[i].pts[j].img="";S.op=i;save();render()}
+else if(a=="ac"){var n=document.getElementById("nc").value.trim();if(n){t.custom.push(n);save();render()}}
+else if(a=="rc"){t.custom.splice(i,1);t.checks={};save();render()}
+else if(a=="go"){if(tm.run){stop();recPause()}else{try{if(!tm.ac)tm.ac=new (window.AudioContext||window.webkitAudioContext)();tm.ac.resume()}catch(er){}try{if(navigator.wakeLock)navigator.wakeLock.request("screen").then(function(l){tm.wl=l}).catch(function(){})}catch(er){}tm.st=Date.now();tm.run=true;tm.iv=setInterval(tick,250);recGo()}tick()}
+else if(a=="lap"){if(tm.i<t.secs.length-1){tm.laps.push(el());tm.i++;var r=plan(t)[tm.i].b-el();tm.fl[tm.i+"a"]=r<=S.al.m*60000?1:0;tm.fl[tm.i+"b"]=r<=0?1:0;render()}}
+else if(a=="rst"){reset();render()}
+else if(a=="fin"){var ms=el();if(ms<1000)return;var lp=tm.laps.slice();lp.push(ms);var rid=recSave();t.log.push({d:new Date().toLocaleDateString("es"),ms:ms,n:"",laps:lp,rec:rid});reset();S.view="reg";save();render()}
+else if(a=="rl"){t.log.splice(i,1);save();render()}});
+render();
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(function(){})}
+</script>
+</body>
+</html>
